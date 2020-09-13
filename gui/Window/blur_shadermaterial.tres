@@ -18,6 +18,7 @@ void fragment() {
 
 	COLOR = col;
 }"
+custom_defines = ""
 
 [resource]
 shader = SubResource( 1 )

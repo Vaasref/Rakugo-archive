@@ -1,6 +1,5 @@
 extends RakugoControl
 
-
 export onready var unpause_timer: Timer = $UnpauseTimer
 
 signal show_menu(menu, game_started)

@@ -4,6 +4,9 @@ var state := 0
 
 func _ready():
 	Rakugo.connect("begin", self, "test_dialog")
+	# Rakugo.add_dialog(self, "test_dialog")
+	Rakugo.current_dialogs[self] = []
+	Rakugo.current_dialogs[self].append("test_dialog")
 
 
 func set_dialog(dialog_name:String):
@@ -19,8 +22,19 @@ func update_sate() -> void:
 	state += 1
 
 
-func next_state() -> bool:
+func can_step() -> bool:
 	return state == Rakugo.story_state
+
+
+## test rollback
+func _input(event):
+	if event.is_action_pressed("rollback"):
+		Rakugo.story_state -= 1
+		
+		if Rakugo.story_state < 0:
+			Rakugo.story_state = 0
+			
+		test_dialog()
 
 
 func test_dialog():
@@ -33,15 +47,13 @@ func test_dialog():
 
 		yield(Rakugo, "story_step")
 		update_sate()
-	
 
-	if next_state():
+	if can_step():
 		Rakugo.say({"what": "Second Step."})
 		yield(Rakugo, "story_step")
 		update_sate()
 
-
-	if next_state():
+	if can_step():
 		Rakugo.say({"what": "Third Step."})
 		yield(Rakugo, "story_step")
 		update_sate()

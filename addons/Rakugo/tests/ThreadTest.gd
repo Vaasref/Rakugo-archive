@@ -2,11 +2,11 @@ extends Node2D
 
 export var skip := false
 export var rollback_speed := 2.0
-var state := 0
+var state := -1
 var state_delta := 0.0
 
-var thread = Thread.new();
-var semaphore = Semaphore.new()
+var thread = Thread.new()
+var sem = Semaphore.new()
 
 func _ready():
 	Rakugo.connect("begin", self, "run_dialog_thread")
@@ -20,35 +20,31 @@ func _ready():
 func set_dialog(dialog_name:String):
 	Rakugo.current_node_name = name
 	Rakugo.current_dialog_name = dialog_name
-	semaphore.post()
-
-
-func first_state() -> bool:
-	return Rakugo.story_state == 0
-
 
 func say(kwords:Dictionary) -> void:
+	prints( state, Rakugo.story_state)
 	if state == Rakugo.story_state:
 		Rakugo.say(kwords)
-		state += 1
-		semaphore.wait()
-		print("semaphore.wait()")
+		sem.wait()
 
 
 func run_dialog_thread():
-	thread.start(self, "test_dialog")
-	print("start_dialog")
+	thread.start(self, "test_dialog", 2)
 
 
 func continue_dialog(arg1 = "", arg2 = ""):
 	# prints(arg1, arg2)
-	semaphore.post()
-	print("semaphore.post()") 
+	if state + 1 >= Rakugo.story_state:
+		state = Rakugo.story_state
+		sem.post()
 
 
 func end_dialog():
 	thread.call_deferred("wait_to_finish")
-	print("end dialog")
+
+
+func _exit_tree():
+	end_dialog()
 
 
 func test_dialog(userdata):
@@ -57,13 +53,15 @@ func test_dialog(userdata):
 	say({"what":
 			"This is test for {code}Thread{/code}"
 			+ " and {code}Semaphore{/code} approach"})
-	prints(state, "state")
+	prints(state, "what",
+			"This is test for {code}Thread{/code}",
+			"and {code}Semaphore{/code} approach")
 
 	say({"what": "Second Step."})
-	prints(state, "state")
+	prints("what", "Second Step.")
 
 	say({"what": "Third Step."})
-	prints(state, "state")
+	prints("what", "Third Step.")
 	
 	end_dialog()
 

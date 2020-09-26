@@ -13,10 +13,7 @@ func _ready():
 	#qno_button.connect("pressed", self, "_on_Return_pressed")
 	Rakugo.connect("game_ended", self, "_on_game_end")
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3604e07ec86475a753e155f800b5abea1609756e
 func _on_nav_button_press(nav):
 	match nav:
 		"start":

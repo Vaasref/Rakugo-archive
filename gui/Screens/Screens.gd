@@ -12,8 +12,11 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	#qno_button.connect("pressed", self, "_on_Return_pressed")
 	Rakugo.connect("game_ended", self, "_on_game_end")
-  
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3604e07ec86475a753e155f800b5abea1609756e
 func _on_nav_button_press(nav):
 	match nav:
 		"start":
@@ -46,17 +49,17 @@ func _on_nav_button_press(nav):
 				emit_signal("show_main_menu_confirm")
 			else:
 				show_page(nav)
-		
+
 		"return":
 			if Rakugo.started:
 				hide()
-			return
-		
+				return
+
 			show_page(nav)
 
 		"quit":
 			$QuitScreen.visible = true
-		
+
 
 const page_action_index:Dictionary = {
 	'main_menu':0,
@@ -152,10 +155,9 @@ func _on_load_file():
 	hide()
 
 
-
 func _on_SavesSlotScreen_mode_changed(save_mode):
 	if save_mode:
 		emit_signal("show_menu", "save", Rakugo.started)
 		return
-	
+
 	emit_signal("show_menu", "load", Rakugo.started)

@@ -12,7 +12,7 @@
 [ext_resource path="res://gui/Screens/SavesScreen/PageNavBar.gd" type="Script" id=11]
 [ext_resource path="res://gui/Screens/SavesScreen/SavesScreenPageButton.gd" type="Script" id=12]
 [ext_resource path="res://gui/Screens/SavesScreen/PageLabel.gd" type="Script" id=13]
-[ext_resource path="res://fonts/DejaVu/DejaVuSans.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSans.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 

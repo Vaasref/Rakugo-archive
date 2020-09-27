@@ -4,11 +4,11 @@
 [ext_resource path="res://gui/Labels/name_text.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/Labels/dialogue_text.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/Rakugo/nodes/controls/rakugo_ask.gd" type="Script" id=8]
-[ext_resource path="res://fonts/DejaVu/DejaVuSans-Oblique.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://fonts/DejaVu/DejaVuSans-BoldOblique.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://fonts/DejaVu/DejaVuSans-Bold.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://fonts/DejaVu/DejaVuSansMono.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://fonts/DejaVu/DejaVuSans.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSans-Oblique.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSans-BoldOblique.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSans-Bold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSansMono.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSans.ttf" type="DynamicFontData" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30

@@ -12,7 +12,7 @@
 [ext_resource path="res://gui/Screens/SavesScreen/PageNavBar.gd" type="Script" id=11]
 [ext_resource path="res://gui/Screens/SavesScreen/SavesScreenPageButton.gd" type="Script" id=12]
 [ext_resource path="res://gui/Screens/SavesScreen/PageLabel.gd" type="Script" id=13]
-[ext_resource path="res://addons/Rakugo/fonts/NotoSansDejaVuSans.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://fonts/DejaVu/DejaVuSans.ttf" type="DynamicFontData" id=14]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -373,8 +373,8 @@ __meta__ = {
 [connection signal="add_save_slot" from="." to="SavePage/ScrollContainer/GridContainer" method="_on_add_save_slot"]
 [connection signal="clear_save_slots" from="." to="SavePage/ScrollContainer/GridContainer" method="_on_clear_save_slots"]
 [connection signal="mode_changed" from="." to="SkipNamingButton" method="_on_save_mode_changed"]
-[connection signal="page_changed" from="." to="PageNavBar" method="_on_page_changed"]
 [connection signal="page_changed" from="." to="PageLabel" method="_on_page_changed"]
+[connection signal="page_changed" from="." to="PageNavBar" method="_on_page_changed"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="text_changed" from="PageLabel" to="PageLabel" method="_on_text_changed"]
 [connection signal="scroll_ended" from="SavePage/ScrollContainer" to="SavePage/ScrollContainer" method="_on_scroll_ended"]

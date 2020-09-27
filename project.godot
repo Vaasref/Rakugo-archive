@@ -104,16 +104,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/objects/rakugo_vars/quest.gd"
 }, {
-"base": "RakugoButton",
-"class": "RPGButton",
-"language": "GDScript",
-"path": "res://rpg-game-kit/rpg/CombatArea/RPGButton.gd"
-}, {
-"base": "Character",
-"class": "RPGCharacter",
-"language": "GDScript",
-"path": "res://rpg-game-kit/rpg/Characters/RPGCharacter.gd"
-}, {
 "base": "AnimationPlayer",
 "class": "RakugoAnimPlayer",
 "language": "GDScript",
@@ -294,11 +284,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/statements/show.gd"
 }, {
-"base": "Node",
-"class": "StartCombat",
-"language": "GDScript",
-"path": "res://rpg-game-kit/rpg/CombatArea/StartCombat.gd"
-}, {
 "base": "Object",
 "class": "Statement",
 "language": "GDScript",
@@ -349,8 +334,6 @@ _global_script_class_icons={
 "PlayAnim": "",
 "PlayAudio": "",
 "Quest": "",
-"RPGButton": "",
-"RPGCharacter": "",
 "RakugoAnimPlayer": "res://addons/Rakugo/icons/rakugo_animation_player.svg",
 "RakugoAsk": "res://addons/Rakugo/icons/rakugo_ask.svg",
 "RakugoAudioPlayer": "res://addons/Rakugo/icons/rakugo_audio_player.svg",
@@ -387,7 +370,6 @@ _global_script_class_icons={
 "Say": "",
 "SceneLinks": "res://addons/Rakugo/icons/scene_links.svg",
 "Show": "",
-"StartCombat": "",
 "Statement": "",
 "StopAnim": "",
 "StopAudio": "",

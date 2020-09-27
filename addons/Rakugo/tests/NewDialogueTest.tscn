@@ -4,3 +4,5 @@
 
 [node name="NewDialogueTest" type="Node"]
 script = ExtResource( 1 )
+default_starting_event = "some_dialog"
+auto_start = true

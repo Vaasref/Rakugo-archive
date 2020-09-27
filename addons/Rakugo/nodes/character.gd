@@ -40,7 +40,8 @@ func _on_start() -> void:
 	var dict := get_dict()
 	character = Rakugo.character(_id, dict)
 	var dbg = Rakugo.debug_dict(dict,
-	 character.parameters_names, "Set Character with id: " + _id)
+		character.parameters_names, 
+		"Set Character with id: " + _id)
 
 
 func _set_character_id(value: String) -> void:
@@ -143,7 +144,6 @@ func _get_icon() -> Image:
 		_icon = load(character.icon)
 	
 	return _icon
-
 
 
 func _set_avatar(value: PackedScene) -> void:

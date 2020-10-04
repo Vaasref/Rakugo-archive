@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/nodes/character.gd"
 }, {
+"base": "RichTextLabel",
+"class": "CharacterLabel",
+"language": "GDScript",
+"path": "res://addons/Rakugo/nodes/controls/character_label.gd"
+}, {
 "base": "RakugoVar",
 "class": "CharacterObject",
 "language": "GDScript",
@@ -48,6 +53,16 @@ _global_script_classes=[ {
 "class": "Dialogue",
 "language": "GDScript",
 "path": "res://addons/Rakugo/nodes/dialogue.gd"
+}, {
+"base": "RichTextLabel",
+"class": "DialogueLabel",
+"language": "GDScript",
+"path": "res://addons/Rakugo/nodes/controls/dialogue_label.gd"
+}, {
+"base": "PanelContainer",
+"class": "DialoguePanel",
+"language": "GDScript",
+"path": "res://addons/Rakugo/nodes/controls/dialogue_panel.gd"
 }, {
 "base": "Node",
 "class": "Emojis",
@@ -219,11 +234,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/Rakugo/nodes/controls/rakugo_label.gd"
 }, {
-"base": "Node",
-"class": "RakugoTextParser",
-"language": "GDScript",
-"path": "res://addons/Rakugo/lib/text.gd"
-}, {
 "base": "Theme",
 "class": "RakugoTheme",
 "language": "GDScript",
@@ -258,11 +268,6 @@ _global_script_classes=[ {
 "class": "RakugoVector3",
 "language": "GDScript",
 "path": "res://addons/Rakugo/objects/rakugo_vars/rakugo_vector3.gd"
-}, {
-"base": "Node",
-"class": "RootNode",
-"language": "GDScript",
-"path": "res://addons/Rakugo/nodes/root_node.gd"
 }, {
 "base": "RakugoBaseButton",
 "class": "SaveButton",
@@ -320,9 +325,12 @@ _global_script_class_icons={
 "Button2D": "res://addons/Rakugo/icons/button_2d.svg",
 "CallNode": "",
 "Character": "res://addons/Rakugo/icons/rakugo_character.svg",
+"CharacterLabel": "",
 "CharacterObject": "",
 "CollapsedList": "",
 "Dialogue": "res://addons/Rakugo/icons/dialogue.svg",
+"DialogueLabel": "",
+"DialoguePanel": "",
 "Emojis": "res://addons/Rakugo/emojis/icon.png",
 "Hide": "",
 "HistorySave": "res://addons/Rakugo/icons/save.svg",
@@ -357,7 +365,6 @@ _global_script_class_icons={
 "RakugoSpatial": "res://addons/Rakugo/icons/rakugo_spatial.svg",
 "RakugoText": "",
 "RakugoTextLabel": "res://addons/Rakugo/icons/rakugo_text_label.svg",
-"RakugoTextParser": "",
 "RakugoTheme": "res://addons/Rakugo/icons/theme.svg",
 "RakugoTimer": "res://addons/Rakugo/icons/rakugo_timer.svg",
 "RakugoVar": "",
@@ -365,7 +372,6 @@ _global_script_class_icons={
 "RakugoVarLabel": "res://addons/Rakugo/icons/rakugo_var_label.svg",
 "RakugoVector2": "",
 "RakugoVector3": "",
-"RootNode": "res://addons/Rakugo/icons/rakugo_root_node.svg",
 "SaveButton": "res://addons/Rakugo/icons/rakugo_save_button.svg",
 "Say": "",
 "SceneLinks": "res://addons/Rakugo/icons/scene_links.svg",
@@ -431,7 +437,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Rakugo" )
+enabled=PoolStringArray( "Rakugo", "editor_icon_previewer", "godot-plugin-refresher" )
 
 [importer_defaults]
 

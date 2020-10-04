@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://themes/Default/default.tres" type="Theme" id=1]
 [ext_resource path="res://gui/InGame/InGameGUI.gd" type="Script" id=2]
 [ext_resource path="res://addons/Rakugo/nodes/controls/rakugo_menu.gd" type="Script" id=3]
 [ext_resource path="res://gui/InGame/ChoiceButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://gui/InGame/Say.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/InGame/GlobalDialoguePanel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gui/QuickMenu/QuickMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gui/InGame/Notify.gd" type="Script" id=7]
 [ext_resource path="res://gui/QuitScreen/QuitScreen.tscn" type="PackedScene" id=8]
-[ext_resource path="res://gui/InGame/hack_button_style.tres" type="StyleBox" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.498039 )
@@ -36,22 +35,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SayPanel" parent="Panel" instance=ExtResource( 5 )]
-anchor_bottom = 0.8
-mouse_filter = 0
-
-[node name="Button" type="Button" parent="Panel/SayPanel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 1
-custom_styles/hover = ExtResource( 15 )
-custom_styles/pressed = ExtResource( 15 )
-custom_styles/focus = ExtResource( 15 )
-custom_styles/disabled = ExtResource( 15 )
-custom_styles/normal = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="GlobalDialoguePanel" parent="Panel" instance=ExtResource( 5 )]
+anchor_top = 0.791667
+anchor_bottom = 0.791667
 
 [node name="QuickMenu" parent="Panel" instance=ExtResource( 6 )]
 

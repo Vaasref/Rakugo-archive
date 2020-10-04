@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://gui/InGame/NVL.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/Rakugo/nodes/controls/character_label.gd" type="Script" id=1]
+[ext_resource path="res://themes/Default/default.tres" type="Theme" id=2]
+[ext_resource path="res://addons/Rakugo/nodes/controls/dialogue_label.gd" type="Script" id=3]
+[ext_resource path="res://addons/Rakugo/nodes/controls/dialogue_panel.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -25,25 +28,30 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[node name="GlobalDialoguePanel" type="Panel"]
+[node name="GlobalDialoguePanel" type="PanelContainer"]
 self_modulate = Color( 1, 1, 1, 0.784314 )
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -167.0
+margin_right = 640.0
 rect_min_size = Vector2( 100, 100 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 2 )
 custom_styles/panel = SubResource( 1 )
+script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 self_modulate = Color( 1, 1, 1, 0.784314 )
-anchor_left = 0.15
-anchor_right = 0.85
-anchor_bottom = 1.0
-margin_bottom = -40.0
+margin_right = 1280.0
+margin_bottom = 167.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 2 )
@@ -57,20 +65,28 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 886.0
-margin_bottom = 670.0
+margin_right = 1270.0
+margin_bottom = 157.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 
-[node name="NVL" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 876.0
-margin_bottom = 84.0
-name_label_path = NodePath("../../../../Global/ScrollContainer/VBoxContainer/NVL/VBox/Label")
-dialog_label_path = NodePath("../../../../Global/ScrollContainer/VBoxContainer/NVL/VBox/Dialogue")
-avatar_container_path = NodePath("../../../../Global/ScrollContainer/VBoxContainer/NVL/ViewportContainer")
+[node name="CharacterLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1260.0
+margin_bottom = 28.0
+bbcode_enabled = true
+bbcode_text = "[b]Character Name[/b]"
+text = "Character Name"
+fit_content_height = true
+script = ExtResource( 1 )
+
+[node name="DialogueLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 1260.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
 
 [node name="Kinds" type="AnimationPlayer" parent="."]
 anims/adv = SubResource( 3 )

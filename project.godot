@@ -419,7 +419,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "Rakugo", "editor_icon_previewer", "godot-plugin-refresher" )
+enabled=PoolStringArray( "Rakugo")
 
 [importer_defaults]
 

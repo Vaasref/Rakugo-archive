@@ -67,7 +67,7 @@ func _on_statement(type: int, parameters: Dictionary) -> void:
 
 		if "add" in parameters:
 			add_text = parameters.add
-
+		
 		write_dialog(parameters.what, _typing)
 
 	if Rakugo.skipping:
@@ -77,33 +77,28 @@ func _on_statement(type: int, parameters: Dictionary) -> void:
 	return
 
 
-func write_dialog(text: String, _typing: bool) -> void:
+func write_dialog(new_text: String, _typing: bool) -> void:
 	typing = _typing
 
 	if Rakugo.skipping:
 		typing = false
 
-	if not typing:
-		if add_text:
-			bbcode_text += text
-			return
-
-		bbcode_text = text
-		return
-
-	if not add_text:
-		bbcode_text = ""
-
-	var new_text := ""
-
 	if add_text:
-		new_text = bbcode_text
+		bbcode_text += new_text
+	
+	else:
+		bbcode_text = new_text
 
-	var markup := false
+	if typing:
+		visible_characters = 0
+	else:
+		visible_characters = -1
+		return
+	
+	var markup = false
 
 	for letter in text:
-		new_text += letter
-
+		visible_characters += 1
 		if letter == "[":
 			markup = true
 			continue
@@ -131,15 +126,3 @@ func write_dialog(text: String, _typing: bool) -> void:
 		Rakugo.dialog_timer.start()
 
 		yield(Rakugo.dialog_timer, "timeout")
-
-		bbcode_text = new_text
-
-		if !typing:
-
-			if add_text:
-				bbcode_text += text
-				break
-
-				bbcode_text = text
-
-			break

@@ -227,56 +227,25 @@ func _get_script_hash(object=self):
 
 ## Rakugo statement wrap
 
-func define(var_name: String, value = null, save_included := true) -> RakugoVar:
-	if is_active():
-		return Rakugo.define(var_name, value, save_included)
-	return null
-
-
-func ranged_var(var_name: String, start_value := 0.0, min_value := 0.0, max_value := 0.0) -> RakugoRangedVar:
-	if is_active():
-		return Rakugo.ranged_var(var_name, start_value, min_value, max_value)
-	return null
-
-
-func character(character_id: String, parameters :={}) -> CharacterObject:
-	if is_active():
-		return Rakugo.character(character_id, parameters)
-	return null
-
-
 func set_var(var_name: String, value) -> RakugoVar:
 	if is_active():
 		return Rakugo.set_var(var_name, value)
 	return null
 
 
-func get_var(var_name: String) -> RakugoVar:
+func say(character, text:String, parameters: Dictionary) -> void:
 	if is_active():
-		return Rakugo.get_var(var_name)
-	return null
+		Rakugo.call_deferred('say', character, text, parameters)
 
 
-func get_value(var_name: String):
+func ask(variable_name:String, parameters: Dictionary) -> void:
 	if is_active():
-		return Rakugo.get_value(var_name)
+		Rakugo.call_deferred('ask', variable_name, parameters)
 
 
-func say(parameters: Dictionary) -> void:
+func menu(choices:Array, parameters: Dictionary) -> void:
 	if is_active():
-		Rakugo.call_deferred('say', parameters)
-
-
-func ask(parameters: Dictionary) -> void:
-	if is_active():
-		Rakugo.call_deferred('ask', parameters)
-
-
-func menu(parameters: Dictionary) -> void:
-	if is_active():
-		if not ("node" in parameters):
-			parameters["node"] = self
-		Rakugo.call_deferred('menu', parameters)
+		Rakugo.call_deferred('menu', choices, parameters)
 
 
 func show(node_id: String, parameters := {"state": []}):
@@ -289,7 +258,7 @@ func hide(node_id: String) -> void:
 		Rakugo.call_deferred('hide', node_id)
 
 
-func notify(info: String, length: int = get_value("notify_time")) -> void:
+func notify(info: String, length: int = -1) -> void:
 	if is_active():
 		Rakugo.call_deferred('notify', info, length)
 

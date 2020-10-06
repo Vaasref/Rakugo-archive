@@ -1,5 +1,4 @@
 extends PanelContainer
-class_name DialoguePanel
 
 var _type: int
 var ui_accept := false

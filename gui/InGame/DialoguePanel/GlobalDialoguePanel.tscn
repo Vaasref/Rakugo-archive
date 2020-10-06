@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://addons/Rakugo/nodes/controls/character_label.gd" type="Script" id=1]
+[ext_resource path="res://gui/InGame/DialoguePanel/character_label.gd" type="Script" id=1]
 [ext_resource path="res://themes/Default/default.tres" type="Theme" id=2]
-[ext_resource path="res://addons/Rakugo/nodes/controls/dialogue_label.gd" type="Script" id=3]
-[ext_resource path="res://addons/Rakugo/nodes/controls/dialogue_panel.gd" type="Script" id=4]
+[ext_resource path="res://gui/InGame/DialoguePanel/dialogue_label.gd" type="Script" id=3]
+[ext_resource path="res://gui/InGame/DialoguePanel/dialogue_panel.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 

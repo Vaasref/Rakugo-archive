@@ -1,5 +1,4 @@
 extends RichTextLabel
-class_name CharacterLabel
 
 var _type: int
 

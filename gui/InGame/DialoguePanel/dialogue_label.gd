@@ -1,5 +1,4 @@
 extends RichTextLabel
-class_name DialogueLabel
 
 var _type: int
 var add_text := false

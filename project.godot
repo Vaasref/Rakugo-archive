@@ -326,6 +326,26 @@ rakugo_quickload={
  ]
 }
 
+[rakugo]
+
+game/version="0.0.1"
+game/credits="Your Company"
+game/scene_links="res://game/scene_links.tres"
+gui/markup="renpy"
+game/rollback_steps=10
+game/history_length=30
+game/saved_steps=10
+gui/theme="res://themes/Default/default.tres"
+gui/save_screen_layout="save_pages"
+default/narrator_label=""
+default/narrator_color=Color( 1, 1, 1, 1 )
+default/punctuation_pause="0"
+default/typing_speed=-0.3
+default/auto_speed=-3
+default/skip_speed=-1
+editor/debug=false
+editor/test_saves=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
